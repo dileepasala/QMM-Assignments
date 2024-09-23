@@ -1,0 +1,225 @@
+---
+title: "QMM Assignment 2 Module 4"
+author: "Pasala Dileep Kumar_811350727"
+date: "2024-09-22"
+output: html_document
+---
+
+Here as per the problem, profit should be maximized by utilizing excess capacity and by producing the quantities of new product with combination of product sizes.
+
+**Assumptions**:
+Let,
+
+The quantity of product to be produced be “V”
+
+Sizes of product to be produced be – “a” for large, “b” for medium, “c” for small.
+
+Profit to company be “P”
+
+❖ **Decision variables**:
+
+Quantity of large size product produced per day in plant 1: “Va1”
+
+Quantity of medium size product produced per day in plant 1: “Vb1”
+
+Quantity of small size product produced per day in plant 1: “Vc1”
+
+Quantity of large size product produced per day in plant 2: “Va2”
+
+Quantity of medium size product produced per day in plant 2: “Vb2”
+
+Quantity of small size product produced per day in plant 2: “Vc2”
+
+Quantity of large size product produced per day in plant 3: “Va3”
+
+Quantity of medium size product produced per day in plant 3: “Vb3”
+
+Quantity of small size product produced per day in plant 3: “Vc3”
+
+
+❖ **Objective function**:
+
+**Maximise P = 420( Va1 + Va2 + Va3) + 360( Vb1 + Vb2 + Vb3) + 300( Vc1 + Vc2 + Vc3)**
+
+❖ **Constraints**: 
+5 types of constraints 
+
+**i. Excess capacity constraint**:
+
+➢ As per plant 1: Va1 + Vb1 + Vc1 ≤ 750
+
+➢ As per plant 2: Va2 + Vb2 + Vc2 ≤ 900
+
+➢ As per plant 3: Va3 + Vb3 + Vc3≤ 450
+
+**ii. Space constraint for in process storage**:
+
+➢ with respect to plant 1: 20Va1 + 15Vb1 + 12Vc1 ≤ 13000
+
+➢ with respect to plant 2: 20Va2 + 15Vb2 + 12Vc2 ≤ 12000
+
+➢ with respect to plant 3: 20Va3 + 15Vb3 + 12Vc3 ≤ 5000
+
+**iii. Forecast of sales constraint**:
+
+➢ for large size products(a): Va1 + Va2 + Va3 ≤ 900
+
+➢ for medium size products(b): Vb1 + Vb2 + Vb3 ≤ 1200
+
+➢ for small size products(c): Vc1 + Vc2 + Vc3 ≤ 750
+
+**iv. Utilization of equal percentage of excess capacity constraint**:
+
+➢ plant1: (Va1 + Vb1 + Vc1)/750 = e
+
+➢ plant2: (Va2 + Vb2 + Vc2)/900= e
+
+➢ plant3: (Va3 + Vb3 + Vc3)/450 = e
+
+➢ moreover, 0 ≤ e ≤ 1
+
+**v. Non negativity constraint**:
+
+decision variable to be ≥ 0
+
+i.e. Va1 ≥ 0, Vb1 ≥ 0, Vc1≥ 0, Va2 ≥ 0, Vb2 ≥ 0, Vc2 ≥ 0, Va3 ≥ 0, Vb3 ≥ 0, Vc3 ≥ 0
+
+**Mathematical formulation**:
+
+Maximise P = 420( Va1 + Va2 + Va3) + 360( Vb1 + Vb2 + Vb3) + 300( Vc1 + Vc2 + Vc3)
+
+given that,
+
+Va1 + Vb1 + Vc1 ≤ 750
+
+Va2 + Vb2 + Vc2 ≤ 900
+
+Va3 + Vb3 + Vc3≤ 450
+
+20Va1 + 15Vb1 + 12Vc1 ≤ 13000
+
+20Va2 + 15Vb2 + 12Vc2 ≤ 12000
+
+20Va3 + 15Vb3 + 12Vc3 ≤ 5000
+
+Va1 + Va2 + Va3 ≤ 900
+
+Vb1 + Vb2 + Vb3 ≤ 1200
+
+Vc1 + Vc2 + Vc3 ≤ 750
+
+(Va1 + Vb1 + Vc1)/750 = e
+
+(Va2 + Vb2 + Vc2)/900= e
+
+(Va3 + Vb3 + Vc3)/450 = e
+
+0 ≤ e ≤ 1
+
+Va1 ≥ 0, Vb1 ≥ 0, Vc1≥ 0, Va2 ≥ 0, Vb2 ≥ 0, Vc2 ≥ 0, Va3 ≥ 0, Vb3 ≥ 0, Vc3 ≥ 0
+
+Rewriting the above constraints as below:
+
+Va1 + Vb1 + Vc1 + 0Va2 + 0Vb2 + 0Vc2 + 0Va3 + 0Vb3 + 0Vc3 ≤ 750
+
+0Va1 + 0Vb1 + 0Vc1 + Va2 + Vb2 + Vc2 + 0Va3 + 0Vb3 + 0Vc3 ≤ 900
+
+0Va1 + 0Vb1 + 0Vc1 + 0Va2 + 0Vb2 + 0Vc2 + Va3 + Vb3 + Vc3 ≤ 450
+
+20Va1 + 15Vb1 + 12Vc1 + 0Va2 + 0Vb2 + 0Vc2 + 0Va3 + 0Vb3 + 0Vc3 ≤ 13000
+
+0Va1 + 0Vb1 + 0Vc1 + 20Va2 + 15Vb2 + 12Vc2 + 0Va3 + 0Vb3 + 0Vc3 ≤ 12000
+
+0Va1 + 0Vb1 + 0Vc1 + 0Va2 + 0Vb2 + 0Vc2 + 20Va3 + 15Vb3 + 12Vc3 ≤ 5000
+
+Va1 + 0Vb1 + 0Vc1 + Va2 + 0Vb2 + 0Vc2 + Va3 + 0Vb3 + 0Vc3 ≤ 900
+
+0Va1 + Vb1 + 0Vc1 + 0Va2 + Vb2 + 0Vc2 + 0Va3 + Vb3 + 0Vc3 ≤ 1200
+
+0Va1 + 0Vb1 + Vc1 + 0Va2 + 0Vb2 + Vc2 + 0Va3 + 0Vb3 + Vc3 ≤ 750
+
+900Va1 + 900Vb1 + 900Vc1 - 750Va2 - 750Vb2 - 750Vc2 + 0Va3 + 0Vb3 + 0Vc3 = 0
+
+0Va1 + 0Vb1 + 0Vc1 + 450Va2 + 450Vb2 + 450Vc2 - 900Va3 - 900Vb3 - 900Vc3 = 0
+
+450Va1 + 450Vb1 + 450Vc1 + 0Va2 + 0Vb2 + 0Vc2 - 750Va3 - 750Vb3 - 750Vc3 = 0
+
+
+
+#for solving it we need to install lpsolve package and call the library of lpsolve
+
+```{r}
+library(lpSolve)
+```
+
+#Writing the objective function
+```{r}
+objectivity <- c(420, 360, 300, 420, 360, 300, 420, 360, 300)
+objectivity
+```
+
+
+#assigning constraints
+```{r}
+assign.constraints <- matrix(c(  
+  1, 1, 1, 0, 0, 0, 0, 0, 0,  # excess capacity constraints for plant 1
+  0, 0, 0, 1, 1, 1, 0, 0, 0,  # excess capacity constraints for plant 2
+  0, 0, 0, 0, 0, 0, 1, 1, 1,  # excess capacity constraints for plant 3
+  20, 15, 12, 0, 0, 0, 0, 0, 0, # Space constraint for in process storage for plant 1
+  0, 0, 0, 20, 15, 12, 0, 0, 0, # Space constraint for in process storage for plant 2
+  0, 0, 0, 0, 0, 0, 20, 15, 12, # Space constraint for in process storage for plant 3
+  1, 0, 0, 1, 0, 0, 1, 0, 0,  # Forecast of sales constraint for large size
+  0, 1, 0, 0, 1, 0, 0, 1, 0,  # Forecast of sales constraint for medium size
+  0, 0, 1, 0, 0, 1, 0, 0, 1,   # Forecast of sales constraint for small size
+  # use of equal percentage of excess capacity constraint
+  900, 900, 900, -750, -750, -750, 0, 0, 0,
+  0, 0, 0, 450, 450, 450, -900, -900, -900,
+  450, 450, 450, 0, 0, 0, -750, -750, -750), nrow = 12, byrow = TRUE)
+assign.constraints
+```
+
+
+# writing the constraints path (<=)
+```{r}
+path <- c ("<=",
+           "<=",
+           "<=",
+           "<=",
+           "<=",
+           "<=",
+           "<=",
+           "<=",
+           "<=",
+           "=",
+           "=",
+           "=")
+path
+```
+
+
+# Define the right-hand side of constraints
+```{r}
+rhs <- c(750, 900, 450,        #excess capacity 
+         13000, 12000, 5000,   #storage capacity
+         900, 1200, 750,       #sales
+         0,0,0                 #same % 
+         )
+rhs
+```
+
+
+
+```{r}
+# Solve the linear programming problem which is maximize profit
+lp_result <- lp("max", objectivity, assign.constraints, path, rhs)
+
+# Print the results
+lp_result
+```
+
+
+#finding Decision variables values using lp function.
+```{r}
+lp_result$solution
+```
+
